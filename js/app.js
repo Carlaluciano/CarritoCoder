@@ -38,7 +38,7 @@ function agregarProductos(e) {
             toast: true,
             position: 'top-end',
             showConfirmButton: false,
-            timer: 1500,
+            timer: 3000,
             timerProgressBar: true,
             didOpen: (toast) => {
               toast.addEventListener('mouseenter', Swal.stopTimer)
@@ -156,3 +156,25 @@ limpiarHTML();
      }
  }
 
+ // Agregamos un Fetch
+
+ const listado = document.querySelector('#card')
+ console.log(listado)
+
+ fetch('js/data.json')
+ .then ( (res) => res.json() )
+ .then ( data => {
+
+  data.forEach((producto) => {
+
+const li = document.createElement('li')
+li.innerHTML=`
+<h4>${producto.nombre}</h4>
+<p>${producto.precio}</p>
+<p>codigo: ${producto.id}</p>
+
+`
+lista.append(li)
+ })
+
+ })

@@ -1,0 +1,16 @@
+
+[
+
+{"nombre": "cookies de vainilla", "precio": "50", "id": 1 },
+{"nombre": "cookies de chocolate", "precio": "50", "id": 2 },
+{"nombre": "cookies con chips", "precio": "80", "id": 3 },
+{"nombre": "cookies brownie", "precio": "100", "id": 4 },
+{"nombre": "torta oreo", "precio": "2100", "id": 5 },
+{"nombre": "chocotorta", "precio": "2000", "id": 6 },
+{"nombre": "torta matilda", "precio": "2500", "id": 7 },
+{"nombre": "tarta cabsha", "precio": "1500", "id": 8 },
+{"nombre": "tarta frutal", "precio": "1500", "id": 9 },
+{"nombre": "lemon pie", "precio": "1800", "id": 10 }
+
+ ]
+

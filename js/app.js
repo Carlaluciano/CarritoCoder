@@ -14,6 +14,13 @@ listaProductos.addEventListener('click', agregarProductos);
 //Elimina producto del carrito
 carrito.addEventListener('click', eliminarProducto);
 
+// Muestra los cursos de local Storage
+document.addEventListener('DOMcontentloaded', () => {
+  articuloCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
+  
+  carritoHTML();
+})
+
 //vaciar carrito
 vaciarCarritobtn.addEventListener('click', () => {
     articuloCarrito = []; // reinicia el carrito
@@ -122,6 +129,9 @@ function leerDatosProducto(producto){
 //limpia el HTML
 limpiarHTML();
 
+
+
+
 //recorre el carrito y genera el HTML
 
      articuloCarrito.forEach( producto => {
@@ -145,6 +155,13 @@ limpiarHTML();
         contenedorCarrito.appendChild (row);
 
      });
+
+     // Agregar el carrito al Storage
+       sincronizarStorage ();
+ }
+
+ function sincronizarStorage(){
+   localStorage.setItem('carrito', JSON.stringify(articuloCarrito))
  }
 
  // Elimina los cursos del tbody
@@ -154,27 +171,4 @@ limpiarHTML();
     while(contenedorCarrito.firstChild){
       contenedorCarrito.removeChild(contenedorCarrito.firstChild)
      }
- }
-
- // Agregamos un Fetch
-
- const listado = document.querySelector('#card')
- console.log(listado)
-
- fetch('js/data.json')
- .then ( (res) => res.json() )
- .then ( data => {
-
-  data.forEach((producto) => {
-
-const li = document.createElement('li')
-li.innerHTML=`
-<h4>${producto.nombre}</h4>
-<p>${producto.precio}</p>
-<p>codigo: ${producto.id}</p>
-
-`
-lista.append(li)
- })
-
- })
+ };

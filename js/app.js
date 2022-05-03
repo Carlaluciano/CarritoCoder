@@ -68,7 +68,7 @@ function eliminarProducto(e){
         const productoId = e.target.getAttribute('data-id');
 
         //Elimina del arreglo los productos
-        articuloCarrito = articuloCarrito.filter( producto => producto.id !== producto.id);
+        articuloCarrito = articuloCarrito.filter( producto => producto.id !== productoId);
 
         carritoHTML(); // itera sobre el carrito
 
